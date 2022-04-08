@@ -4,26 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _4.Swap
+namespace _5.AreaCircumference
 {
     internal class Program
     {
-        static void Swap(int a,int b)
+        static void Solution(float r)
         {
-            int c;
-            c = a;
-            a = b;
-            b = c;
-            Console.WriteLine("A: {0}\nB: {1}",a,b);
+            float area, circumference, pie=3.14F;
+            area = pie * r * r;
+            Console.WriteLine("Area of Circle {0}", area);
+            circumference = 2 * pie * r;
+            Console.WriteLine("Circumference of Circle {0}", circumference);
         }
         static void Main(string[] args)
         {
-            int a,b;
-            Console.WriteLine("A: ");
-            a = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("B: ");
-            b = Convert.ToInt32(Console.ReadLine());
-            Swap(a, b);
+            float r;
+            Console.WriteLine("Enter Circle Radius: ");
+            r= Single.Parse(Console.ReadLine());
+            Solution(r);
         }
     }
 }
