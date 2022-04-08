@@ -4,23 +4,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _3.CallMethod
+namespace _4.Swap
 {
     internal class Program
     {
-        static void ClientMethod(int[] integer)
+        static void Swap(int a,int b)
         {
-            int sum=0;
-            for (int i = 0; i < integer.Length; i++)
-                sum += integer[i];
-            Console.WriteLine("Sum of all integers {0}", sum);
+            int c;
+            c = a;
+            a = b;
+            b = c;
+            Console.WriteLine("A: {0}\nB: {1}",a,b);
         }
         static void Main(string[] args)
         {
-            int[] integer = new int[5];
-            for (int i = 0; i < integer.Length; i++)
-                integer[i] = Convert.ToInt32(Console.ReadLine());
-            ClientMethod(integer);
+            int a,b;
+            Console.WriteLine("A: ");
+            a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("B: ");
+            b = Convert.ToInt32(Console.ReadLine());
+            Swap(a, b);
         }
     }
 }
