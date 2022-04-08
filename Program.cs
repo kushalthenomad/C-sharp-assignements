@@ -4,28 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2.HighestMarks
+namespace _3.CallMethod
 {
     internal class Program
     {
+        static void ClientMethod(int[] integer)
+        {
+            int sum=0;
+            for (int i = 0; i < integer.Length; i++)
+                sum += integer[i];
+            Console.WriteLine("Sum of all integers {0}", sum);
+        }
         static void Main(string[] args)
         {
-            int[] marks = new int[5];
-            int max=0;
-            for(int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("Enter average marks of {0} Student: ",i+1);
-                marks[i]=Convert.ToInt32(Console.ReadLine());
-                if (i == 0)
-                {
-                    max=marks[0];
-                }
-                else if (max<marks[i])
-                {
-                    max=marks[i];
-                }
-            }
-            Console.WriteLine("Highest marks obtained {0}",max);
+            int[] integer = new int[5];
+            for (int i = 0; i < integer.Length; i++)
+                integer[i] = Convert.ToInt32(Console.ReadLine());
+            ClientMethod(integer);
         }
     }
 }
