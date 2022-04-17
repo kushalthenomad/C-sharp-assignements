@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace calculator
+{
+    using System;
+
+    namespace Structure
+    {
+
+
+        enum BookType : byte
+        {
+            Magazine = 10,
+            Novel = 1,
+            ReferenceBook = 100,
+            Miscellaneous = 9
+        }
+
+        struct BOOK
+        {
+            public int BookID;
+            public string title;
+            public short Price;
+            public BookType heading;
+
+
+            public BOOK(int i, string n, short p, BookType et)
+            {
+                BookID = i;
+                title = n;
+                Price = p;
+                heading = et;
+
+            }
+        }
+
+        class MainClass
+        {
+            public static void Main(string[] args)
+            {
+                BOOK Harrypotter;
+                Harrypotter.BookID = 40;
+                Harrypotter.title = "Fred";
+                Harrypotter.Price = 250;
+                Harrypotter.heading = BookType.Novel;
+
+                BOOK kushalbook = new BOOK(50, "kushalbook", 1450, BookType.Magazine);
+
+                Console.WriteLine("BookID is {0} ", kushalbook.BookID);
+                Console.WriteLine("Title is {0}", kushalbook.title);
+                Console.WriteLine("Price is {0}", kushalbook.Price);
+                Console.WriteLine("Tyoe of the book is {0}", kushalbook.heading);
+
+                Console.WriteLine("\n");
+
+                Console.WriteLine("BookID is {0}", Harrypotter.BookID);
+                Console.WriteLine("Title is {0}", Harrypotter.title);
+                Console.WriteLine("Price is {0}", Harrypotter.Price);
+                Console.WriteLine("Tyoe of the book is {0}", Harrypotter.heading);
+
+
+            }
+        }
+    }
+}
